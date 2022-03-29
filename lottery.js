@@ -1,4 +1,3 @@
-//https://api.tzkt.io/v1/statistics/current
 
 const numRegex = /\d/g; // just the numbers
 var tezoData = [];
@@ -11,12 +10,11 @@ var leftSide = 69;
 var catSpace = 50;
 
 function setup() {
-  // createCanvas(800, 600);
   noCanvas();
-
   head();
   jimmi()  
 }
+
 function jimmi(){
 var img = createImg(
   "./background/backji.png",
@@ -25,8 +23,6 @@ var img = createImg(
 img.position(-catSpace*10,0);
 img.size(innerWidth,innerHeight*.99)
 }
-// https://www.fxhash.xyz/generative/4369 // gotta add this in ad a  link 
-
 
 function head() {
   loadJSON(apiUrl, getHead);
@@ -36,16 +32,13 @@ function getHead(data) {
   tezoData = data;
   currentHash = tezoData[0].randomSeed;
   resultNumRegex = currentHash.match(numRegex).slice(0, 16).join("");
-
-  //console.log(resultNumRegex)
   randomSeed(resultNumRegex);
   lottery = round(random() * 420);
-  var pthing = createP("luck()=> {" + lottery + "}");
+  var pthing = createP("(luck)=>{" + lottery + "}");
   pthing.style("font-size:108px");
   pthing.style("text-align:center");
-  pthing.style("color:purple");
+  pthing.style("color:white");
   pthing.position(leftSide, displayHeight * 0.2);
-
   var morePs = createP("HA$H: " + resultNumRegex);
   morePs.style("fonts-size:36px");
   morePs.style("color:yellow");
