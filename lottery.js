@@ -42,7 +42,7 @@ function getHead(data) {
   var morePs = createP("HA$H: " + resultNumRegex);
   morePs.style("fonts-size:36px");
   morePs.style("color:yellow");
-  morePs.position(leftSide, displayHeight * 0.42);
+  morePs.position(leftSide + catSpace, displayHeight * 0.42);
   var catImg = createImg(
     "./background/logo.png",
     "cat in the tkxt tezo baking hat"
