@@ -40,7 +40,7 @@ function getHead(data) {
   //console.log(resultNumRegex)
   randomSeed(resultNumRegex);
   lottery = round(random() * 420);
-  var pthing = createP("luck()=> " + lottery);
+  var pthing = createP("luck()=> {" + lottery + "}");
   pthing.style("font-size:108px");
   pthing.style("text-align:center");
   pthing.style("color:purple");
