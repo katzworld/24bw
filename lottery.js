@@ -67,5 +67,9 @@ function getHead(data) {
   bottomP5.position(catSpace * 6, displayHeight - spacing * 2);
   bottomP5.style("color:red");
   bottomP5.style("font-size:36px");
+  var pickMePickMe = createA('https://dns.xyz/KaTZWorlD', 'KaTZworlD');
+  pickMePickMe.position(catSpace * 10, displayHeight - spacing * 4)
+  pickMePickMe.style('color:orange')
+  pickMePickMe.style('font-size:24px');
 }
 
