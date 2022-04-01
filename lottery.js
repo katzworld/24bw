@@ -49,10 +49,16 @@ function getHead(data) {
   );
   catImg.size(catSpace, catSpace);
   catImg.position(leftSide - catSpace, displayHeight - spacing * 2);
-  var topthingy = createA('https://www.fxhash.xyz/generative/4369', 'FXHash Mondrian Ticket');
-  topthingy.position(leftSide,catSpace);
-  topthingy.style('color:blue')
-  topthingy.style('font-size:36px');
+  var topThingy = createA('https://www.fxhash.xyz/generative/4369', '** BURNT OG  **  Mondrian Ticket');
+  topThingy.position(leftSide,catSpace);
+  topThingy.style('color:RED')
+  topThingy.style('font-size:36px');
+ 
+  var topThingy2 = createDiv('FXHASH contract is Burning while they upgrade TICKET STILL VALID !!!!');
+  topThingy2.position(leftSide ,catSpace + spacing);
+  topThingy2.style('color:RED')
+  topThingy2.style('font-size:36px');
+ 
   var bottomAck = createA('http://tzkt.io/', 'Powered by TzKT API');
   bottomAck.position(leftSide, displayHeight - spacing * 2);
   bottomAck.style("color:#5963ff");
@@ -73,3 +79,24 @@ function getHead(data) {
   pickMePickMe.style('font-size:24px');
 }
 
+
+const OGHolders = [
+ 'tz1bm6ku1MdBLvaSLs9tYX2TaFFw6Q76SdMS',
+ 'tz1SioLF6ViffZjf9REHXCdJe4SjyuS4D9s6',
+  'tz2RUdXvAKyJSfX39koV7WtPE423adE2fGg2',
+  'tz1aeDqdw9729EBCb4j2uUhZQ2ctfco7W6uT',
+  'tz1RBMsWWneoYbkbaxAhcnhNsJrpfSEMocwL',
+  'tz1fsz5x9dABLHt97kvXAa3LYomtu1BVrS7e',
+  'tz1RfaqRfuQ1V484wP2M17eEhpd7NvHszyva',
+  'tz1RfaqRfuQ1V484wP2M17eEhpd7NvHszyva',
+  'tz1LV3UhLA9WPjAodmhqypb6cF2daod1rrVn',
+  'tz1RytjjMduXapWhyUK26cYkqLXEsU6NhG1k',
+  'tz1gj3xrfZLCjsZWPjMxJ66D5kTxFs1W2x2A',
+  'tz1gj3xrfZLCjsZWPjMxJ66D5kTxFs1W2x2A',
+  'tz1TSdoeS5udkYmVr1cEpErTqxGVrC3Kcd2J',
+  'tz1SDghykbfny4ss819wZqvVAozjvEAvCedZ',
+  'tz1SDghykbfny4ss819wZqvVAozjvEAvCedZ',
+  'tz1SDghykbfny4ss819wZqvVAozjvEAvCedZ',
+  'tz1SDghykbfny4ss819wZqvVAozjvEAvCedZ',
+  'tz1SDghykbfny4ss819wZqvVAozjvEAvCedZ',
+]
