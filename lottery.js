@@ -1,13 +1,13 @@
 
-const numRegex = /\d/g; // just the numbers 
-let tezoData = []; 
+let tezoData; 
 let currentHash; 
+let numRegex = /\d/g; // just the numbers 
 let resultNumRegex;
 let lottery;
 let apiUrl = "https://api.tzkt.io/v1/cycles"; // URL to grab this stuff from
-var nextUpdate;
+let nextUpdate;
 
-const OGHolders = [
+const OGHolders = [ // the ones who hold the OG Token on FX 
   'tz1bm6ku1MdBLvaSLs9tYX2TaFFw6Q76SdMS',
   'tz1SioLF6ViffZjf9REHXCdJe4SjyuS4D9s6',
    'tz2RUdXvAKyJSfX39koV7WtPE423adE2fGg2',
@@ -27,31 +27,27 @@ const OGHolders = [
    'tz1SDghykbfny4ss819wZqvVAozjvEAvCedZ',
    'tz1SDghykbfny4ss819wZqvVAozjvEAvCedZ',
  ]
- 
 
-function setup() {
+
+  function setup () {
   noCanvas()
-  head();
+  getStuff()
 
 }
+ async function getStuff() {
+   const response = await fetch(apiUrl);
+   const data = await response.json();
 
-function head() {
-  loadJSON(apiUrl, getHead);
+  tezoData = data.map(function(giveMeThatApiDrip){ 
+    return `${giveMeThatApiDrip.randomSeed}` 
+})
+  nextUpdate = data[4].startTime; // what time fo the next drop
+  currentHash = tezoData[0].match(numRegex).slice(0, 16).join("");
+  randomSeed(currentHash); //same seed same result 
+  lottery = round(random() * 420); // RNG based yaaa
+
+  document.getElementById("nextdrop").innerHTML = "Next Cycle/ Lottery Drawing: " + `${nextUpdate}`;
+  document.getElementById("hash").innerHTML = " Current Ha$H: " + ` ${currentHash} `;
+  document.getElementById("winner").innerHTML = ` ${lottery} `;
 }
-
-function getHead(data) {
-  tezoData = data.slice(0,10); //past 10 events 
-  currentHash = tezoData[0].randomSeed;  // grab that 1st seed 
-  resultNumRegex = currentHash.match(numRegex).slice(0, 16).join("");
-  randomSeed(resultNumRegex);
-  lottery = round(random() * 420);
-
-
-  nextUpdate = tezoData[4].startTime;
-  document.getElementById("nextdrop").innerHTML =  "Next Cycle/ Lottery Drawing: " + `${nextUpdate}`;
-  document.getElementById("hash").innerHTML =  " Current Ha$H: " + ` ${resultNumRegex} `;
-  document.getElementById("winner").innerHTML = ` ${lottery} ` ;
-  console.log(tezoData)
-}
-
-
+  
