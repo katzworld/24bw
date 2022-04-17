@@ -1,50 +1,101 @@
-html, body {
-  margin: 10px;
-  padding: 10px;
-  background-color: black;
-  font-size: 12px;
+html,
+body {
+    margin: 10px;
+    padding: 10px;
+    background-color: rgb(253, 170, 250);
+    font-size: 12px;
 }
 
 h1 {
-  color: red;
-  margin-left: 0px;
-  font-size:30px;
+    color: red;
+    margin-left: 0px;
+    font-size: 30px;
 }
+
 h2 {
-  color:white;
-  margin-left: 0px;
-  font-size: 24px;
+    color: white;
+    margin-left: 0px;
+    font-size: 24px;
 }
 
 h3 {
-  color:blue;
-  margin-left: 0px;
-  font-size: 24px;
+    color: blue;
+    margin-left: 0px;
+    font-size: 24px;
 }
 
-
-#hash{
-  color: yellow;
+#works {
+    /* background-color: aqua; */
+    height: 150px;
+    align-items: center;
 }
 
-#winner{
-  color: orange;
-  font-size: 36px;
+#hash {
+    color: yellow;
 }
-#winner-text{
-  color: purple;
-  font-size: 24px;
+
+#winner {
+    color: orange;
+    font-size: 36px;
+}
+
+#winner-text {
+    color: purple;
+    font-size: 24px;
 }
 
 .bottom {
-  position: absolute;
-  color: whitesmoke;
-  bottom: 20px;
-  width:  25%;
-  font-size:18px;
+    position: absolute;
+    color: whitesmoke;
+    bottom: 20px;
+    width: 25%;
+    font-size: 18px;
 }
-  img{
+
+.framed {
+    padding: 5px;
+    max-height: 105px;
+}
+
+.small {
     padding: 5px;
     width: 35px;
-  }
+}
 
+img.framed {
+    background-color: #ddc;
+    border: solid 2vmin #eee;
+    border-bottom-color: #fff;
+    border-left-color: #eee;
+    border-radius: 2px;
+    border-right-color: #eee;
+    border-top-color: #ddd;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, .25) inset, 0 5px 10px 5px rgba(0, 0, 0, .25);
+    display: inline-block;
+    margin: 10vh 10vw;
+    height: 40vh;
+    /* position: ; */
+    text-align: center;
+}
+
+img.framed:before {
+    border-radius: 2px;
+    bottom: -2vmin;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .25) inset;
+    content: "";
+    left: -2vmin;
+    position: absolute;
+    right: -2vmin;
+    top: -2vmin;
+}
+
+img.framed:after {
+    border-radius: 2px;
+    bottom: -2.5vmin;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .25);
+    content: "";
+    left: -2.5vmin;
+    position: absolute;
+    right: -2.5vmin;
+    top: -2.5vmin;
+}
